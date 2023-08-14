@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Classs Place"""
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 
-class Plase(BaseModel):
+class Place(BaseModel):
     """Class Place
 Attrs:
     city_id: The city id

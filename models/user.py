@@ -15,4 +15,3 @@ Attrs:
     password = ""
     first_name = ""
     last_name = ""
-

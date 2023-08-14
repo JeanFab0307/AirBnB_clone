@@ -2,10 +2,16 @@
 """class FileStorage"""
 from json import dumps, loads
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage():
-    """Serialize instances to a Json file 
+    """Serialize instances to a Json file
     And deserialize Json file to instances
 Attrs:
     __file_path(str): Path of the JSOn file
@@ -13,6 +19,7 @@ Attrs:
     """
     __file_path = "models/engine/file.json"
     __objects = {}
+
     def all(self):
         """Return the dictionary '__objects'"""
         return FileStorage.__objects
@@ -36,7 +43,7 @@ Attrs:
             with open(FileStorage.__file_path, mode="r") as f:
                 json_dict = loads(f.read())
                 for key, obj_dict in json_dict.items():
-                    FileStorage.__objects[key] = BaseModel(**obj_dict)
-        except:
-            
+                    obj_class = str(obj_dict['__class__']) + "(**obj_dict)"
+                    FileStorage.__objects[key] = eval(obj_class)
+        except Exception:
             pass
