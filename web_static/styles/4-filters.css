@@ -1,5 +1,5 @@
-.filters {
-    background-color: white;
+.container .filters {
+    background-color: green;
     height: 70px;
     width: 100%;
     border: 1px #DDDDDD solid;
