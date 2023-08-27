@@ -112,6 +112,10 @@ class HBNBCommand(cmd.Cmd):
         'EOF command to exit the program'
         return True
 
+    def default(self, line):
+        print("oh no:", line)
+        self.do_all("User")
+
 
 def update(args):
     """Do the update command"""

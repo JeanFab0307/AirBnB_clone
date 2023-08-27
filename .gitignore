@@ -2,3 +2,5 @@
 *#
 *main*
 sc*
+__pycache__
+*.json
